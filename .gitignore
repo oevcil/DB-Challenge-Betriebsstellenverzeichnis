@@ -1,4 +1,6 @@
+DBNetz-Betriebsstellenverzeichnis-Stand2021-10.csv
 HELP.md
+out/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

@@ -28,6 +28,8 @@ public class BetriebsstellenverzeichnisApplication {
      */
     public static void main(String[] args) {
         PATH = args[0];
+        System.out.println(args[0]);
+        System.out.println(PATH);
         SpringApplication.run(BetriebsstellenverzeichnisApplication.class, args);
     }
 }

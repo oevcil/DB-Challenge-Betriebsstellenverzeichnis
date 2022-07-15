@@ -7,12 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.*;
 import java.util.ArrayList;
 
-
 @RestController
 public class BetriebsstellenverzeichnisController {
-
-    //Betriebsstellenverzeichnis b = new Betriebsstellenverzeichnis();
-
     @GetMapping("/")
     public String endpoint(){
         return "{}";
