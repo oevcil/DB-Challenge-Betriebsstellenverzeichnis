@@ -22,7 +22,6 @@ public class Betriebsstellenverzeichnis {
     private String letzteAEnderung;
 
 
-    public Betriebsstellenverzeichnis(){}
     public Betriebsstellenverzeichnis(Betriebsstellenverzeichnis b){
         this.plc = b.plc;
         this.rL100_Code = b.rL100_Code;

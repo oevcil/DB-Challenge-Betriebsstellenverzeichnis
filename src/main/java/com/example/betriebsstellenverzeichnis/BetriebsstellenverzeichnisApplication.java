@@ -34,22 +34,21 @@ public class BetriebsstellenverzeichnisApplication {
      * @param args Es werden keine weiteren Argumente eingelesen.
      */
     public static void main(String[] args) {
+        //Die Konstante PATH wird mit dem ersten Argument befüllt.
         PATH = args[0];
         SpringApplication.run(BetriebsstellenverzeichnisApplication.class, args);
     }
 
     /**
      * Die Methode leseCVS liest eine CVS Datei ein und erstellt ein Objekt.
-     * Die Methode leseCVS liest eine CVS Datei ein.
+     * Die Methode leseCVS ist static und hat die Funktion eine CVS Datei einzulesen ud in ein Objekt zu übergeben.
      * Daraufhin wird ein Objekt erstellt vom Typ Betriebsstellenverzeichnis. Alle Felder die leer sind, in der CVS Datei, werden mit dem Wert null aufgefüllt.
      * Das generierte Objekt wird in eine ArrayList gespeichert, welche zurückgegeben wird.
      * @return arrayBSV
      */
     public static ArrayList<Betriebsstellenverzeichnis> leseCVS(){
-
-        ArrayList<Betriebsstellenverzeichnis> arrayBSV = new ArrayList<>();
         String pfad = BetriebsstellenverzeichnisApplication.PATH;
-
+        ArrayList<Betriebsstellenverzeichnis> arrayBSV = new ArrayList<>();
         File datei = new File(pfad);
 
         try{
