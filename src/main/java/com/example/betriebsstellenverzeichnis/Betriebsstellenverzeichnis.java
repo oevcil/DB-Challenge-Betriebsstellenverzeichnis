@@ -21,7 +21,6 @@ public class Betriebsstellenverzeichnis {
     private String regionalbereich;
     private String letzteAEnderung;
 
-
     public Betriebsstellenverzeichnis(Betriebsstellenverzeichnis b){
         this.plc = b.plc;
         this.rL100_Code = b.rL100_Code;
