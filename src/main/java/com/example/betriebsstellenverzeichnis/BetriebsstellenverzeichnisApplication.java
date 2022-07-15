@@ -21,8 +21,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class BetriebsstellenverzeichnisApplication {
-
-    //public static String PATH = System.getProperty("path");
     public static String PATH;
     /**
      * Das Programm BetriebsstellenverzeichnisApplication.
@@ -32,7 +30,4 @@ public class BetriebsstellenverzeichnisApplication {
         PATH = args[0];
         SpringApplication.run(BetriebsstellenverzeichnisApplication.class, args);
     }
-
-    //text
-
 }
