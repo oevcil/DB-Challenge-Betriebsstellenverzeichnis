@@ -1,6 +1,7 @@
 package com.example.betriebsstellenverzeichnis.controller;
 
 import com.example.betriebsstellenverzeichnis.Betriebsstellenverzeichnis;
+import com.example.betriebsstellenverzeichnis.BetriebsstellenverzeichnisApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.*;
@@ -41,9 +42,10 @@ public class BetriebsstellenverzeichnisController {
     protected ArrayList<Betriebsstellenverzeichnis> leseCVS(){
 
         ArrayList<Betriebsstellenverzeichnis> arrayBSV = new ArrayList<>();
-        String pfad = "DBNetz-Betriebsstellenverzeichnis-Stand2021-10.csv";
+        String pfad = BetriebsstellenverzeichnisApplication.PATH;
 
         File datei = new File(pfad);
+
         try{
             FileReader fileReader = new FileReader(datei);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -67,24 +69,6 @@ public class BetriebsstellenverzeichnisController {
             throw new RuntimeException(e);
         }
 
-
-        /*try {
-            List<String> alleZeilen = Files.readAllLines(Paths.get(pfad));
-            for (String zeile : alleZeilen) {
-                String[] aufteilung = zeile.split(";");
-                for (int i = 0; i < aufteilung.length; i++){
-                    if(aufteilung[i].equals("")){
-                        aufteilung[i] = null;
-                    }
-                }
-                Betriebsstellenverzeichnis bsv = new Betriebsstellenverzeichnis(aufteilung[0], aufteilung[1], aufteilung[2], aufteilung[3], aufteilung[4], aufteilung[5], aufteilung[6], aufteilung[7], aufteilung[8], aufteilung[9], aufteilung[10], aufteilung[11]);
-                arrayBSV.add(bsv);
-            }
-        } catch (FileNotFoundException fnfex){
-            System.out.println(fnfex.getMessage());
-        } catch (IOException ioex){
-            System.out.println(ioex.getMessage());
-        }*/
         return arrayBSV;
     }
 }
