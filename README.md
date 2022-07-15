@@ -26,6 +26,8 @@ This was a very nice and demanding task, which challenged me personally to deal 
 ## Notes
 
 - Since there was no default given for the code conventions, I mainly used the German language for the code and basic conventions.
+My goal is to create a program that roughly follows this flowchart:
+![pap-db](https://user-images.githubusercontent.com/70027346/179308462-630724da-e580-4984-808b-b8c419812cb1.PNG)
 
 ## Start Guide
 
