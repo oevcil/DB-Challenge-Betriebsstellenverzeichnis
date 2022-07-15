@@ -31,7 +31,6 @@ public class BetriebsstellenverzeichnisController {
     @GetMapping("/betriebsstelle/{id}")
     @ExceptionHandler(Exception.class)
     public Betriebsstellenverzeichnis endpoint(@PathVariable String id){
-
         String lowerCaseRL100Code;
         ArrayList<Betriebsstellenverzeichnis> arrayBSV = BetriebsstellenverzeichnisApplication.leseCVS();
 
