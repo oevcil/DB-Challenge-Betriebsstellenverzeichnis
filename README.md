@@ -21,10 +21,11 @@ HTTP-STATUS: 200
 
 Conclusion
 
-This was a very nice and demanding task, which challenged me personally to deal with Spring Boot, Endpoints and Servelets in a very short time and to acquire further knowledge. 
+This was a very nice and demanding task, which challenged me personally to deal with Spring Boot, Endpoints, Git and Servelets in a very short time and to acquire further knowledge. 
 
 Notes
 
 - Since there was no default for the code conventions, I mainly used the German language for the code.
-- Since there was no definition of how to input the document, I assumed that it was placed in the "appropriate directory". 
+
+ 
 

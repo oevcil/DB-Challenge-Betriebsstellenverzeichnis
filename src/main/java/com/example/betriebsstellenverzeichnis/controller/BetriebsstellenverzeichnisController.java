@@ -4,31 +4,33 @@ import com.example.betriebsstellenverzeichnis.Betriebsstellenverzeichnis;
 import com.example.betriebsstellenverzeichnis.BetriebsstellenverzeichnisApplication;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.*;
 import java.util.ArrayList;
 
-
+/**
+ * Dies ist die Klasse BetriebsstellenverzeichnisController welche den RestController abbildet.
+ * Diese Klasse stellt die Endpoints für die Abfrage bereit.
+ */
 @RestController
 public class BetriebsstellenverzeichnisController {
 
-    //Betriebsstellenverzeichnis b = new Betriebsstellenverzeichnis();
-
-    @GetMapping("/")
-    public String endpoint(){
-        return "{}";
-    }
-
     @GetMapping("/betriebsstelle")
-    public String ausgabe(){
-        ArrayList<Betriebsstellenverzeichnis> arrayBSV = leseCVS();
+    public String endpoint(){
+        ArrayList<Betriebsstellenverzeichnis> arrayBSV = BetriebsstellenverzeichnisApplication.leseCVS();
         return arrayBSV.toString();
     }
 
+    /**
+     * Endpoint für URI /betriebsstelle/{id}
+     * Nimmt die GET Anfragen für /betriebsstelle/{id} entgegen und prüft ob {id} vorhanden ist.
+     * Falls dem so ist, wird ein JSON-Objekt zurückgegeben.
+     * @param id Dynamischer Wert der sich aus der URI ergibt.
+     * @return Gibt das Objekt im Responcebody mit allen Attributen im JSON-Format wieder.
+     */
     @GetMapping("/betriebsstelle/{id}")
     @ExceptionHandler(Exception.class)
-    public Betriebsstellenverzeichnis ausgabe(@PathVariable String id){
+    public Betriebsstellenverzeichnis endpoint(@PathVariable String id){
 
-        ArrayList<Betriebsstellenverzeichnis> arrayBSV = leseCVS();
+        ArrayList<Betriebsstellenverzeichnis> arrayBSV = BetriebsstellenverzeichnisApplication.leseCVS();
 
         for (Betriebsstellenverzeichnis b: arrayBSV){
             String lowerCaseRL100Cod = b.getRL100Code().toLowerCase();
@@ -36,39 +38,6 @@ public class BetriebsstellenverzeichnisController {
                 return new Betriebsstellenverzeichnis(b);
             }
         }
-        return null;
-    }
-
-    protected ArrayList<Betriebsstellenverzeichnis> leseCVS(){
-
-        ArrayList<Betriebsstellenverzeichnis> arrayBSV = new ArrayList<>();
-        String pfad = BetriebsstellenverzeichnisApplication.PATH;
-
-        File datei = new File(pfad);
-
-        try{
-            FileReader fileReader = new FileReader(datei);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            for(String zeile = bufferedReader.readLine(); zeile != null; zeile = bufferedReader.readLine()){
-                String[] zeilenZuWerte = zeile.split(";");
-                for (int i = 0; i < zeilenZuWerte.length; i++){
-                    if(zeilenZuWerte[i].equals("")){
-                        zeilenZuWerte[i] = null;
-                    }
-                }
-                Betriebsstellenverzeichnis bsv = new Betriebsstellenverzeichnis(zeilenZuWerte[0], zeilenZuWerte[1], zeilenZuWerte[2], zeilenZuWerte[3], zeilenZuWerte[4], zeilenZuWerte[5], zeilenZuWerte[6], zeilenZuWerte[7], zeilenZuWerte[8], zeilenZuWerte[9], zeilenZuWerte[10], zeilenZuWerte[11]);
-                arrayBSV.add(bsv);
-            }
-
-            bufferedReader.close();
-            fileReader.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        return arrayBSV;
+        return null; //Besser wäre es hier eine Fehlermeldung zurückzugeben.
     }
 }
