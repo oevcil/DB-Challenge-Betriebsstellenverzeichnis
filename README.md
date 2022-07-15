@@ -27,5 +27,10 @@ Notes
 
 - Since there was no default for the code conventions, I mainly used the German language for the code.
 
+Start Guide
+
+To run the program, an argument must be supplied, for example:
+java -jar Betriebsstellenverzeichnis.jar D:\IdeaProjects\Betriebsstellenverzeichnis\DBNetz-Betriebsstellenverzeichnis-Stand2021-10.csv
+
  
 
