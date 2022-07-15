@@ -2,6 +2,10 @@ package com.example.betriebsstellenverzeichnis;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Die Klasse Betriebsstellenverzeichnis.
+ * Stellt alle notwendigen Methoden, wie Setter und Getter bereit.
+ */
 public class Betriebsstellenverzeichnis {
 
     private String plc;

@@ -2,9 +2,12 @@ package com.example.betriebsstellenverzeichnis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileReader;
 import java.util.ArrayList;
+
 
 /*
 * TODO:
@@ -16,10 +19,12 @@ import java.util.ArrayList;
 * -Datum formatieren.
 * -Sonderzeichen
 * */
-
 /**
- *Diese Klasse stellt den Einstiegspunkt in das Programm dar.
- *Die Klasse beinhaltet die main-Methode, mit der das Programm gestartet wird.
+ * DB Challenge von Onur Evcil am 14.07.2022
+ * Diese Klasse stellt den Einstiegspunkt in das Programm dar.
+ *
+ * @author Onur Evcil
+ * @version 0.5
  */
 @SpringBootApplication
 public class BetriebsstellenverzeichnisApplication {
@@ -64,14 +69,11 @@ public class BetriebsstellenverzeichnisApplication {
 
             bufferedReader.close();
             fileReader.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException ioe) {
+            throw new RuntimeException(ioe);
         }
 
         return arrayBSV;
     }
-
 
 }
