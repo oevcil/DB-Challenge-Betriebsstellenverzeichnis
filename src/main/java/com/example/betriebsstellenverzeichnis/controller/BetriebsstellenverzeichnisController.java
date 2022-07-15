@@ -32,12 +32,12 @@ public class BetriebsstellenverzeichnisController {
     @ExceptionHandler(Exception.class)
     public Betriebsstellenverzeichnis endpoint(@PathVariable String id){
 
-        String lowerCaseRL100Cod;
+        String lowerCaseRL100Code;
         ArrayList<Betriebsstellenverzeichnis> arrayBSV = BetriebsstellenverzeichnisApplication.leseCVS();
 
         for (Betriebsstellenverzeichnis b: arrayBSV){
-            lowerCaseRL100Cod = b.getRL100Code().toLowerCase();
-            if(lowerCaseRL100Cod.equals(id.toLowerCase())){
+            lowerCaseRL100Code = b.getRL100Code().toLowerCase();
+            if(lowerCaseRL100Code.equals(id.toLowerCase())){
                 return new Betriebsstellenverzeichnis(b);
             }
         }
