@@ -32,4 +32,7 @@ public class BetriebsstellenverzeichnisApplication {
         PATH = args[0];
         SpringApplication.run(BetriebsstellenverzeichnisApplication.class, args);
     }
+
+    //text
+
 }
