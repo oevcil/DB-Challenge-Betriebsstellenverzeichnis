@@ -21,12 +21,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class BetriebsstellenverzeichnisApplication {
+
+    //public static String PATH = System.getProperty("path");
+    public static String PATH;
     /**
      * Das Programm BetriebsstellenverzeichnisApplication.
      * @param args Es werden keine weiteren Argumente eingelesen.
      */
     public static void main(String[] args) {
+        PATH = args[0];
         SpringApplication.run(BetriebsstellenverzeichnisApplication.class, args);
     }
-
 }

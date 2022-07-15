@@ -144,24 +144,4 @@ public class Betriebsstellenverzeichnis {
     public void setLetzteAEnderung(String letzteAEnderung) {
         this.letzteAEnderung = letzteAEnderung;
     }
-
-    /*
-    @Override
-    public String toString(){
-        String rueckgabe="{\n" +
-                "    \"PLC\": \""+this.plc+"\",\n" +
-                "    \"RL100-Code\": \""+this.rL100Code+"\",\n" +
-                "    \"RL100-Langname\": \""+this.rL100Langname+"\",\n" +
-                "    \"RL100-Kurzname\": \""+this.rL100Kurzname+"\",\n" +
-                "    \"Typ Kurz\": \""+this.typKurz+"\",\n" +
-                "    \"Typ Lang\": \""+this.typLang+"\",\n" +
-                "    \"Betriebszustand\": \""+this.betriebszustand+"\",\n" +
-                "    \"Datum ab\": "+this.datumAb+",\n" +
-                "    \"Datum bis\": "+this.datumBis+",\n" +
-                "    \"Niederlassung\": "+this.niederlassung+",\n" +
-                "    \"Regionalbereich\": \""+this.regionalbereich+"\",\n" +
-                "    \"Letzte Änderung\": "+this.letzteAEnderung+"\n" +
-                "}\n";
-        return rueckgabe;
-    }*/
 }
