@@ -15,11 +15,11 @@ import java.util.ArrayList;
 @RestController
 public class BetriebsstellenverzeichnisController {
 
-    @GetMapping("/betriebsstelle")
+    /*@GetMapping("/betriebsstelle")
     public String endpoint(){
         ArrayList<Betriebsstellenverzeichnis> arrayBSV = BetriebsstellenverzeichnisApplication.leseCVS();
         return arrayBSV.toString();
-    }
+    }*/
 
     /**
      * Endpoint für URI /betriebsstelle/{id}
